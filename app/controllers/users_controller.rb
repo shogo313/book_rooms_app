@@ -5,13 +5,12 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find(params[:id])
-		binding.pry
 	end
 		
 	def update
-		binding.pry
 		@user = User.find(params[:id])
-		@user.update(params.require(:user).permit(:name))
+		binding.pry
+		@user.update(params.require(:user).permit(:name, :introduction))
 		binding.pry
 	end
 
