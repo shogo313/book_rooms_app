@@ -1,17 +1,24 @@
 class UsersController < ApplicationController
+	
+	def top
+		@user = current_user
+	end
+	
+	def account
+		@user = current_user
+	end
+
 	def show
-		@user = User.find(params[:id])
+		@user = current_user
 	end
 
 	def edit
-		@user = User.find(params[:id])
+		@user = current_user
 	end
 		
 	def update
-		@user = User.find(params[:id])
-		binding.pry
+		@user = current_user
 		@user.update(params.require(:user).permit(:name, :introduction))
-		binding.pry
 	end
 
 end

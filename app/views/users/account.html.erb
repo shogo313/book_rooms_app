@@ -1,0 +1,17 @@
+<h3>アカウント情報</h3>
+
+<table>
+  <tr>
+    <th>メールアドレス</th>
+    <td><%= @user.email %></td>
+  </tr>
+
+  <tr>
+    <th>パスワード</th>
+    <td><%= @user.encrypted_password %></td>
+  </tr>
+</table>
+
+<div>
+  <%= link_to "戻る", :back %>
+</div>
