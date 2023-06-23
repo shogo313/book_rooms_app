@@ -1,7 +1,6 @@
-<h3>ユーザープロフィール</h3>
+<h3>プロフィール</h3>
 
 <table>
-  
   <tr>
     <th>名前</th>
     <td><%= @user.name %></td>
@@ -11,5 +10,8 @@
     <th>自己紹介</th>
     <td><%= @user.introduction %></td>
   </tr>
-  
 </table>
+
+<div>
+  <%= link_to "戻る", :back %>
+</div>
