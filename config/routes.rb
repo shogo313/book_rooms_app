@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'rooms/index'
   get 'homes/top'
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -6,4 +7,5 @@ Rails.application.routes.draw do
   get 'users/top', to: 'users#top'
   get 'users/account', to: 'users#account'
   resources :users
+  resources :rooms
 end
