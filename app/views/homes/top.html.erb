@@ -1,2 +1,13 @@
 <h1>ROOM MATCHING</h1>
 
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+<div>
+  <ul>
+    <li></li>
+    <li><%= link_to "提供する宿を登録", new_room_path %></li>
+  </ul>
+</div>
+
