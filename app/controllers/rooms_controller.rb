@@ -2,6 +2,7 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @room = Room.where(user_id: current_user)
   end
 
   def new
