@@ -5,6 +5,13 @@ class RoomsController < ApplicationController
     @room = Room.where(user_id: current_user)
   end
 
+  def show
+    @room = Room.find(params[:id])
+    unless @room.user == current_user
+      redirect_to rooms_index_path
+    end
+  end
+
   def new
     @room = Room.new
   end
