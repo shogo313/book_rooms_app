@@ -1,5 +1,6 @@
 class Room < ApplicationRecord
   belongs_to :user
+  has_many :books
   
   validates :name, presence: true
   validates :introduction, length:{maximum: 50}
