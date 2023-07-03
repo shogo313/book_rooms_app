@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get 'users/account', to: 'users#account'
   resources :users
   resources :rooms
+  resources :books
 end
