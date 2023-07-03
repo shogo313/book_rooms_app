@@ -5,8 +5,10 @@
 <% end %>
 
 <div>
-  <ul>
-    <li></li>
-    <li><%= link_to "提供する宿を登録", new_room_path %></li>
-  </ul>
+  <h2>宿を探す</p>
+  <%= render "shared/search" %>
+</div>
+
+<div>
+  <%= link_to "提供する宿を登録", new_room_path %>
 </div>

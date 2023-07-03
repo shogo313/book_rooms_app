@@ -5,6 +5,10 @@ class RoomsController < ApplicationController
     @room = Room.where(user_id: current_user)
   end
 
+  def search
+    @rooms = Room.search(params[:word_name_detail], params[:word_area])
+  end
+
   def show
     @room = Room.find(params[:id])
     unless @room.user == current_user
