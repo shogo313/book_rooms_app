@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'users/top', to: 'users#top'
   get 'users/account', to: 'users#account'
   resources :users
-  resources :rooms
-  resources :books
+  resources :rooms do
+    resources :books
+    post 'books/confirm', to: 'books#confirm'
+  end
 end
