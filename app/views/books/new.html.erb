@@ -1,0 +1,39 @@
+<h3>予約内容入力</h3>
+
+
+
+<ul>
+  <li><%= @room.name %></li>
+  <li><%= "1名1泊　#{@room.charge_per_night}円" %></li>
+</ul>
+
+<%= form_with model: [@room, @book], url: {action: :confirm} do |f| %>
+<table>
+  <tr>
+    <th><%= f.label :check_in_date ,"チェックイン" %></th>
+    <td><%= f.date_field :check_in_date %></td>
+  </tr>
+
+  <tr>
+    <th><%= f.label :check_out_date ,"チェックアウト" %></th>
+    <td><%= f.date_field :check_out_date %></td>
+  </tr>
+
+  <tr>
+    <th><%= f.label :number_of_people ,"人数" %></th>
+    <td><%= f.number_field :number_of_people %>名</td>
+  </tr>
+  
+  
+  </table>
+
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <%= f.hidden_field :room_id, value: @room.id %>
+
+  <div>
+    <ul>
+      <li><%= f.submit "入力内容確認画面へ"%></li>
+    </ul>
+  </div>
+<% end %>
+<%= link_to "戻る", :back %>

@@ -1,0 +1,50 @@
+<h3>入力内容確認</h3>
+
+<%= render "shared/error", obj:@book %>
+
+<table>
+  <tr>
+    <th>チェックイン</th>
+    <td><%= @book.check_in_date %></td>
+  </tr>
+  
+  <tr>
+    <th>チェックアウト</th>
+    <td><%= @book.check_out_date %></td>
+  </tr>
+
+  <tr>
+    <th>人数</th>
+    <td><%= "#{@book.number_of_people}名" %></td>
+  </tr>
+
+  <tr>
+    <th>宿泊日数</th>
+    <td><%= "#{@book.number_of_nights}泊" %></td>
+  </tr>
+  
+  
+  
+  <tr>
+    <th>宿泊料金合計</th>
+    <td><%= "#{@book.payment_amount}円" %></td>
+  </tr>
+
+  </table>
+
+<%= form_with model: [@room, @book] do |f| %>
+  <%= f.hidden_field :check_in_date %>
+  <%= f.hidden_field :check_out_date %>
+  <%= f.hidden_field :number_of_nights %>
+  <%= f.hidden_field :number_of_people %>
+  <%= f.hidden_field :payment_amount %>
+  <%= f.hidden_field :user_id %>
+  <%= f.hidden_field :room_id %>
+  
+  <div>
+    <ul>
+      <li><%= f.submit "予約を確定する"%></li>
+    </ul>
+  </div>
+<% end %>
+
