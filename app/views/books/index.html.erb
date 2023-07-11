@@ -1,2 +1,33 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<h3>予約一覧</h3>
+
+
+<% @books.each do |book| %>
+  <div>
+    <table>
+      <tr>
+        <th>宿名</th>
+        <td><%= book.room.name %></td>
+      </tr>
+      <tr>
+        <th>紹介文</th>
+        <td><%= book.room.introduction %></td>
+      </tr>
+      <tr>
+        <th>チェックイン</th>
+        <td><%= book.check_in_date %></td>
+      </tr>
+      <tr>
+        <th>チェックアウト</th>
+        <td><%= book.check_out_date %></td>
+      </tr>
+      <tr>
+        <th>宿泊合計料金</th>
+        <td><%= book.payment_amount %></td>
+      </tr>
+      <tr>
+        <th>予約確定時刻</th>
+        <td><%= book.created_at %></td>
+      </tr>
+    </table>
+  </div>
+<% end %>

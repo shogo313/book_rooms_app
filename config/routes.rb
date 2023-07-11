@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'books/index'
+  
   get 'homes/top'
   get 'rooms/index'
   get 'rooms/search'
@@ -8,9 +8,11 @@ Rails.application.routes.draw do
 
   get 'users/top', to: 'users#top'
   get 'users/account', to: 'users#account'
-  resources :users
+  resources :users do
+    get 'books/index', to:'books#index'
+  end
   resources :rooms do
-    resources :books
+    resources :books, only: [:new, :create]
     post 'books/confirm', to: 'books#confirm'
   end
 end
