@@ -10,7 +10,7 @@ class Book < ApplicationRecord
 
   def check_in_date_after_today
     unless check_in_date.nil?
-      errors.add(:check_in_date, "は本日以降の日付を選択してください") if check_in_date <= Date.today
+      errors.add(:check_in_date, "は本日以降の日付を選択してください") if check_in_date < Date.today
     end
   end
 
