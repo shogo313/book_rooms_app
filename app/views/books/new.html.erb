@@ -1,6 +1,6 @@
 <h3>予約内容入力</h3>
 
-
+<%= render "shared/error", obj:@book %>
 
 <ul>
   <li><%= @room.name %></li>
@@ -26,9 +26,6 @@
   
   
   </table>
-
-  <%= f.hidden_field :user_id, value: @user.id %>
-  <%= f.hidden_field :room_id, value: @room.id %>
 
   <div>
     <ul>

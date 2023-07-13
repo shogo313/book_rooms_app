@@ -15,15 +15,16 @@ class BooksController < ApplicationController
 
   def confirm
     @room = Room.find(params[:room_id])
-    @book = Book.new(book_params)
+    @book = Book.new(params.require(:book).permit(:check_in_date, :check_out_date, :number_of_people))
+    @book.user_id = current_user.id
+    @book.room_id = @room.id
     @book.number_of_nights = @book.calculate_number_of_nights
-    @book.payment_amount = @book.calculate_payment_amount(@room.charge_per_night)
+    @book.payment_amount = @book.calculate_payment_amount
+    render:new if @book.invalid?
   end
 
   def create
-    binding.pry
     @book = Book.new(book_params)
-    binding.pry
     if @book.save
       flash[:notice] = "宿を予約しました"
       redirect_to homes_top_path
