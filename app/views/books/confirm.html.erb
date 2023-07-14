@@ -30,7 +30,7 @@
     <td><%= "#{@book.payment_amount}円" %></td>
   </tr>
 
-  </table>
+</table>
 
 <%= form_with model: [@room, @book] do |f| %>
   <%= f.hidden_field :check_in_date %>
@@ -40,11 +40,20 @@
   <%= f.hidden_field :payment_amount %>
   <%= f.hidden_field :user_id %>
   <%= f.hidden_field :room_id %>
-  
   <div>
     <ul>
       <li><%= f.submit "予約を確定する"%></li>
     </ul>
   </div>
 <% end %>
+
+<%= form_with model: [@room, @book], url: {action: :back} do |f| %>
+  <%= f.hidden_field :check_in_date %>
+  <%= f.hidden_field :check_out_date %>
+  <%= f.hidden_field :number_of_people %>
+  <div>
+    <%= f.submit "予約内容入力へ戻る"%>
+  </div>
+<% end %>
+
 

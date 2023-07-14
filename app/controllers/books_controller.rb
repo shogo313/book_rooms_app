@@ -20,7 +20,13 @@ class BooksController < ApplicationController
     @book.room_id = @room.id
     @book.number_of_nights = @book.calculate_number_of_nights
     @book.payment_amount = @book.calculate_payment_amount
-    render:new if @book.invalid?
+    render :new if @book.invalid?
+  end
+
+  def back
+    @room = Room.find(params[:room_id])
+    @book = Book.new(params.require(:book).permit(:check_in_date, :check_out_date, :number_of_people))
+    render :new
   end
 
   def create
