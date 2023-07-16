@@ -1,17 +1,12 @@
 <h3>登録宿一覧</h3>
 
 <div>
-  <% @room.each do |room| %>
+  <% @rooms.each do |room| %>
     <ul>
-      <li><%= room.name %></li>
+      <li><%= link_to room.name, user_room_path(@user,room.id) %></li>
       <li><%= room.introduction %></li>
       <li><%= room.charge_per_night %>円</li>
       <li><%= room.created_at %></li>
-      <li><%= link_to "詳細", room %></li>
     </ul>
   <% end %>
-</div>
-
-<div>
-  <%= link_to "戻る", :back %>
 </div>

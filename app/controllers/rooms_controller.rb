@@ -2,18 +2,17 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @room = Room.where(user_id: current_user)
-  end
-
-  def search
-    @rooms = Room.search(params[:word_name_detail], params[:word_area])
+    @user = current_user
+    @rooms = @user.rooms
   end
 
   def show
     @room = Room.find(params[:id])
-    unless @room.user == current_user
-      redirect_to rooms_index_path
-    end
+    redirect_to homes_top_path unless @room.user_id == current_user.id
+  end
+
+  def search
+    @rooms = Room.search(params[:word_name_detail], params[:word_area])
   end
 
   def new
