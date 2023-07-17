@@ -1,0 +1,9 @@
+<h3><%= @room.name %></h3>
+<ul>
+  <li>1名 税込 <%= @room.charge_per_night %>円</li>
+  <li><%= @room.introduction %></li>
+</ul>
+
+<div>
+  <%= link_to "予約する", new_room_book_path(@room) %>
+</div>

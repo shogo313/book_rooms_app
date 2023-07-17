@@ -1,0 +1,14 @@
+<%= render "shared/search" %>
+<h3>検索結果</h3>
+<p><%= "#{@rooms.count}件" %></p>
+<div>
+  <% @rooms.each do |room| %>
+    <ul>
+      <li><%= room.name %></li>
+      <li><%= room.address %></li>
+      <li><%= room.charge_per_night %>円</li>
+      <li><%= room.detail %></li>
+      <li><%= link_to "詳細", search_path(room.id) %></li>
+    </ul>
+  <% end %>
+</div>
