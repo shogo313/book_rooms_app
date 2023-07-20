@@ -4,10 +4,12 @@ class RoomsController < ApplicationController
   def index
     @user = current_user
     @rooms = @user.rooms
+    binding.pry
   end
 
   def show
     @room = Room.find(params[:id])
+    binding.pry
     redirect_to homes_top_path unless @room.user_id == current_user.id
   end
 
@@ -27,6 +29,6 @@ class RoomsController < ApplicationController
 
   private
   def room_params
-    params.require(:room).permit(:name, :introduction, :charge_per_night, :detail, :address)
+    params.require(:room).permit(:name, :introduction, :charge_per_night, :detail, :address, :image)
   end
 end

@@ -2,11 +2,19 @@
 
 <div>
   <% @rooms.each do |room| %>
+    <h4><%= link_to room.name, user_room_path(@user,room.id) %></h4>
+    <div>
+      <% if room.image.attached? %>
+        <%= image_tag room.image %>
+      <% else %>
+        <%= image_tag 'default-image-room.png', :alt => '宿のデフォルト画像' %>
+      <% end %>
+    </div>
     <ul>
-      <li><%= link_to room.name, user_room_path(@user,room.id) %></li>
       <li><%= room.introduction %></li>
       <li><%= room.charge_per_night %>円</li>
       <li><%= room.created_at %></li>
     </ul>
+    
   <% end %>
 </div>

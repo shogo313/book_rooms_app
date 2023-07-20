@@ -1,6 +1,8 @@
 class Room < ApplicationRecord
   belongs_to :user
   has_many :books
+
+  has_one_attached :image 
   
   validates :name, presence: true
   validates :introduction, length:{maximum: 50}
