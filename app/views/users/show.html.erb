@@ -2,6 +2,15 @@
 
 <table>
   <tr>
+    <th>アイコン画像</th>
+    <% if @user.image.attached? %>
+      <td><%= image_tag @user.image %></td>
+    <% else %>
+      <%= image_tag 'default-image-user.png', :alt => 'ユーザーのデフォルト画像' %>
+    <% end %>
+  </tr>
+
+  <tr>
     <th>名前</th>
     <td><%= @user.name %></td>
   </tr>
@@ -11,7 +20,3 @@
     <td><%= @user.introduction %></td>
   </tr>
 </table>
-
-<div>
-  <%= link_to "戻る", :back %>
-</div>

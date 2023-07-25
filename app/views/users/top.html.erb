@@ -1,4 +1,7 @@
 <h3>マイページ</h3>
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end %>
 <div>
   <ul>
     <li>
@@ -15,7 +18,5 @@
     <li><%= link_to 'プロフィール編集', edit_user_path(:id) %></li>
     <li><%= link_to '登録宿一覧', user_rooms_index_path(@user) %></li>
     <li><%= link_to '予約宿一覧', user_books_index_path(@user) %></li>
-
   </ul>
 </div>
-<%= link_to "戻る", :back %>
