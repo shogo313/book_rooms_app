@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_many :books
 
   has_one_attached :image
+
+  validates :name, presence: true
+  validates :introduction, length:{maximum: 1000}
 end
