@@ -2,6 +2,8 @@ ja:
   activerecord:
     models:
       room: 宿
+      book: 予約
+      user: ユーザー
     attributes:
       room:
         name: 宿名
@@ -9,10 +11,6 @@ ja:
         charge_per_night: 宿泊料金
         detail: 詳細
         introduction: 紹介文
-
-    models:
-      book: 予約
-    attributes:
       book:
         check_in_date: チェックイン
         check_out_date: チェックアウト
@@ -20,10 +18,15 @@ ja:
         number_of_nights: 宿泊日数
         payment_amount: 宿泊料金合計
         created_at: 予約確定日時
-
-    models:
-      user: ユーザー
-    attributes:
       user:
         name: 名前
         introduction: 自己紹介
+
+  time:
+    formats:
+      date: "%Y/%m/%d"
+      date_and_time: "%Y/%m/%d %H:%M"
+
+  date:
+    formats:
+      date: "%Y/%m/%d"
