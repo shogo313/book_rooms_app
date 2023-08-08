@@ -1,0 +1,30 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.users_account_container, .users_show_container {
+  .user {
+    padding: 10px;
+    border: 2px solid $border-color;
+    border-radius: 10px;
+    background-color: $main-color;
+    .user_table {
+      .table_head {
+        padding: 10px;
+        width: 25%;
+        vertical-align: middle;
+      }
+      .table_data {
+        padding: 10px;
+        width: 75%;
+        vertical-align: middle;
+        .user_image_container {
+          width: 25%;
+          .user_image {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

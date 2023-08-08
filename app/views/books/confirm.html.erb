@@ -1,59 +1,55 @@
-<h3>入力内容確認</h3>
+<div class="books_confirm_container">
+  <h2 class="heading">入力内容確認</h2>
+  <%= render "shared/error", obj:@book %>
+  <div class="form">
+    <h4 class="form_head"><%= @room.name %></h4>
+    <table class="form_table">
+      <tr class="table_row">
+        <th class="table_head">チェックイン</th>
+        <td class="table_data"><%= l @book.check_in_date, format: :date %></td>
+      </tr>
 
-<%= render "shared/error", obj:@book %>
+      <tr class="table_row">
+        <th class="table_head">チェックアウト</th>
+        <td class="table_data"><%= l @book.check_out_date, format: :date %></td>
+      </tr>
 
-<table>
-  <tr>
-    <th>チェックイン</th>
-    <td><%= @book.check_in_date %></td>
-  </tr>
-  
-  <tr>
-    <th>チェックアウト</th>
-    <td><%= @book.check_out_date %></td>
-  </tr>
+      <tr class="table_row">
+        <th class="table_head">人数</th>
+        <td class="table_data"><%= "#{@book.number_of_people}名" %></td>
+      </tr>
 
-  <tr>
-    <th>人数</th>
-    <td><%= "#{@book.number_of_people}名" %></td>
-  </tr>
+      <tr class="table_row">
+        <th class="table_head">宿泊日数</th>
+        <td class="table_data"><%= "#{@book.number_of_nights}泊" %></td>
+      </tr>
 
-  <tr>
-    <th>宿泊日数</th>
-    <td><%= "#{@book.number_of_nights}泊" %></td>
-  </tr>
-  
-  
-  
-  <tr>
-    <th>宿泊料金合計</th>
-    <td><%= "#{@book.payment_amount}円" %></td>
-  </tr>
+      <tr class="table_row">
+        <th class="table_head">宿泊料金合計</th>
+        <td class="table_data"><%= "#{@book.payment_amount}円" %></td>
+      </tr>
+    </table>
 
-</table>
-
-<%= form_with model: [@room, @book] do |f| %>
-  <%= f.hidden_field :check_in_date %>
-  <%= f.hidden_field :check_out_date %>
-  <%= f.hidden_field :number_of_nights %>
-  <%= f.hidden_field :number_of_people %>
-  <%= f.hidden_field :payment_amount %>
-  <%= f.hidden_field :user_id %>
-  <%= f.hidden_field :room_id %>
-  <div>
-    <ul>
-      <li><%= f.submit "予約を確定する"%></li>
-    </ul>
+    <div class="form_foot">
+      <%= form_with model: [@room, @book], url: {action: :back} do |f| %>
+        <%= f.hidden_field :check_in_date %>
+        <%= f.hidden_field :check_out_date %>
+        <%= f.hidden_field :number_of_people %>
+        <%= f.submit "予約内容入力へ戻る", class: "button" %>
+      <% end %>
+      
+      <%= form_with model: [@room, @book] do |f| %>
+        <%= f.hidden_field :check_in_date %>
+        <%= f.hidden_field :check_out_date %>
+        <%= f.hidden_field :number_of_nights %>
+        <%= f.hidden_field :number_of_people %>
+        <%= f.hidden_field :payment_amount %>
+        <%= f.hidden_field :user_id %>
+        <%= f.hidden_field :room_id %>
+        <%= f.submit "予約を確定する", class: "button" %>
+      <% end %>
+    </div>
   </div>
-<% end %>
-
-<%= form_with model: [@room, @book], url: {action: :back} do |f| %>
-  <%= f.hidden_field :check_in_date %>
-  <%= f.hidden_field :check_out_date %>
-  <%= f.hidden_field :number_of_people %>
-  <div>
-    <%= f.submit "予約内容入力へ戻る"%>
-  </div>
-<% end %>
+</div>
 
 

@@ -1,14 +1,14 @@
-<h1>ROOM MATCHING</h1>
+<div class="homes_top_container">
+  <div class="home_head">
+    <h1>ROOM MATCHING</h1>
+  </div>
+ 
+  <div class="home_body">
+    <h2>宿を探す</h2>
+    <%= render "shared/search" %>
+  </div>
 
-<% if flash[:notice] %>
-  <p class="notice"><%= flash[:notice] %></p>
-<% end %>
-
-<div>
-  <h2>宿を探す</p>
-  <%= render "shared/search" %>
-</div>
-
-<div>
-  <%= link_to "提供する宿を登録", new_room_path %>
+  <div class="home_foot">
+    <%= link_to "提供する宿を登録", new_room_path, class: "button" %>
+  </div>
 </div>

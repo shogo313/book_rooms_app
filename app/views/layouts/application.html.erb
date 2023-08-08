@@ -11,24 +11,46 @@
   </head>
 
   <body>
-    <header>
-      <div>
-        <p><%= link_to 'ROOM MATCHING', homes_top_path %></p>
+    <header class="header">
+      <div class="header_inner">
+        <%= link_to 'ROOM MATCHING', homes_top_path, class:"header_logo" %>
+        <% if flash[:notice] %>
+          <p class="header_notice"><%= flash[:notice] %></p>
+        <% end %>
         <% if user_signed_in? %>
-          <ul>
-            <li>アイコン画像</li>
-            <li><%= current_user.name %></li>
-            <li><%= link_to 'マイページ', users_top_path %></li>
-            <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-          </ul>
+          <div class="user_menu">
+            <div class="user_image_container">
+              <% if current_user.image.attached? %>
+                <%= image_tag current_user.image, class:"user_image"%>
+              <% else %>
+                <%= image_tag 'default-image-user.png', :alt => 'ユーザーのデフォルト画像', class: "user_image" %>
+              <% end %>
+            </div>
+
+            <nav class="user_nav">
+              <p id="dropDawnMenu_button" class="user_name"><%= current_user.name %></p>
+              <ul id="dropDawnMenu" class="user_nav_list dropDawnMenu-default">
+                <li class="user_nav_item"><%= link_to 'アカウント情報表示', users_account_path, class: "user_nav_link" %></li>
+                <li class="user_nav_item"><%= link_to 'アカウント情報編集', edit_user_registration_path, class: "user_nav_link" %></li>
+                <li class="user_nav_item"><%= link_to 'プロフィール表示', user_path(:id), class: "user_nav_link" %></li>
+                <li class="user_nav_item"><%= link_to 'プロフィール編集', edit_user_path(:id), class: "user_nav_link" %></li>
+                <li class="user_nav_item"><%= link_to '登録宿一覧', user_rooms_index_path(current_user), class: "user_nav_link" %></li>
+                <li class="user_nav_item"><%= link_to '予約宿一覧', user_books_index_path(current_user), class: "user_nav_link" %></li>
+                <li class="user_nav_item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "user_nav_link" %></li>
+              </ul>
+            </nav>
+          </div>
         <% else %>
-          <ul>
-            <li><%= link_to '新規登録', new_user_registration_path %></li>
-            <li><%= link_to 'ログイン', new_user_session_path %></li>
-          </ul>
+          <div>
+            <%= link_to '新規登録', new_user_registration_path, class: "button" %>
+            <%= link_to 'ログイン', new_user_session_path, class:"button" %>
+          </div>
         <% end %>
       </div>
     </header>
-    <%= yield %>
+
+    <div class= "container">
+      <%= yield %>
+    </div>
   </body>
 </html>

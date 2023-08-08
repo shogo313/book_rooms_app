@@ -1,17 +1,17 @@
-<h3>アカウント情報</h3>
-
-<table>
-  <tr>
-    <th>メールアドレス</th>
-    <td><%= @user.email %></td>
-  </tr>
-
-  <tr>
-    <th>パスワード</th>
-    <td>*********</td>
-  </tr>
-</table>
-
-<div>
-  <%= link_to "戻る", :back %>
+<div class="users_account_container">
+  <h3 class="heading">アカウント情報</h3>
+  
+  <div class="user">
+    <table class="user_table">
+      <tr class="table_row">
+        <th class="table_head">メールアドレス</th>
+        <td class="table_data"><%= @user.email %></td>
+      </tr>
+    
+      <tr class="table_row">
+        <th class="table_head">パスワード</th>
+        <td class="table_data">*********</td>
+      </tr>
+    </table>
+  </div>
 </div>

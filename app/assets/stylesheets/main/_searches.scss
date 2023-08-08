@@ -1,0 +1,131 @@
+// Place all the styles related to the searches controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+//index.html.erb
+.searches_index_container {
+  .search_head {
+    .search_count {
+      margin-bottom: 20px;
+    }
+  }
+  .search_body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 2%;
+    .room {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      border: 2px solid $border-color;
+      border-radius: 10px;
+      width: 32%;
+      box-sizing: border-box;
+      background-color: $main-color;      
+      .room_image_container {
+        margin-bottom: 20px;
+        height: 200px;
+        .room_image {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .room_text_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+        .room_name {
+          flex-basis: 40px;
+          font-size: 18px;
+          line-height: 1;
+        }
+        .room_address {
+          flex-basis: 60px;
+          font-size: 14px;
+        }
+        .room_detail {
+          flex-grow: 1;
+          margin-bottom: 40px;
+        }
+        .room_chargePerNight {
+          align-self: flex-end;
+          font-size: 18px;
+          font-weight: bold;
+        }
+        .button {
+          text-align: center;
+        }
+      }
+    }
+    @media screen and (max-width:800px) {
+      .room {
+        width: 48%;
+      }
+    }
+    @media screen and (max-width:400px) {
+      .room {
+        width: 100%;
+      }
+    }
+  }
+}
+
+//show.html.erb
+.searches_show_container {
+  .room {
+    padding: 10px;
+    border: 2px solid $border-color;
+    border-radius: 10px;
+    background-color: $main-color;
+    .room_head {
+      margin-bottom: 20px;
+      .room_introduction {
+        font-weight: bold;
+      }
+    }
+    .room_body {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      .room_image_container {
+        width: 48%;
+        margin-right: 4%;
+        .room_image {
+          display: block;
+          width: 100%;
+        }
+      }
+      .room_detail {
+        width: 48%;
+        line-height: 1.5;
+      }
+    }
+    .room_foot {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .room_chargePerNight {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+    @media screen and (max-width:800px) {
+      .room_body {
+      flex-direction: column;
+      align-items: flex-start;
+        .room_image_container {
+          margin-right: 0;
+          margin-bottom: 20px;
+          width: 100%;
+        }
+        .room_detail {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+

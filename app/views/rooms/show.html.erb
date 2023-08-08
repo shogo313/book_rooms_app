@@ -1,16 +1,27 @@
-<h3><%= @room.name %></h3>
-<div>
-  <% if @room.image.attached? %>
-    <%= image_tag @room.image %>
-  <% else %>
-    <%= image_tag 'default-image-room.png', :alt => '宿のデフォルト画像' %>
-  <% end %>
+<div class="rooms_show_container">
+  <h2 class="heading"><%= @room.name %></h2>
+  <table class="room">
+    <tr>
+      <th>登録画像</th>
+      <td class="room_image_container">
+        <% if @room.image.attached? %>
+          <%= image_tag @room.image, class:"room_image" %>
+        <% else %>
+          <%= image_tag 'default-image-room.png', :alt => '宿のデフォルト画像', class:"room_image" %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th>宿泊料金(/一泊)</th>
+      <td class="room_chargePerNight"><%= "#{@room.charge_per_night}円" %></td>
+    </tr>
+    <tr>
+      <th>紹介文</th>
+      <td class="room_introduction"><%= @room.introduction %></td>
+    </tr>
+  </table>
 </div>
-<ul>
-  <li><%= "1名1泊#{@room.charge_per_night}円" %></li>
-  <li><%= @room.introduction %></li>
-</ul>
 
 <div>
-  <%= link_to "戻る", :back %>
+  <%= link_to "戻る", :back, class:"link link-back" %>
 </div>

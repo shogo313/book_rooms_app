@@ -1,22 +1,30 @@
-<h3>プロフィール</h3>
-
-<table>
-  <tr>
-    <th>アイコン画像</th>
-    <% if @user.image.attached? %>
-      <td><%= image_tag @user.image %></td>
-    <% else %>
-      <%= image_tag 'default-image-user.png', :alt => 'ユーザーのデフォルト画像' %>
-    <% end %>
-  </tr>
-
-  <tr>
-    <th>名前</th>
-    <td><%= @user.name %></td>
-  </tr>
-
-  <tr>
-    <th>自己紹介</th>
-    <td><%= @user.introduction %></td>
-  </tr>
-</table>
+<div class="users_show_container">
+  <h3 class="heading">プロフィール</h3>
+  
+  <div class="user">
+    <table class="user_table">
+      <tr class="table_row">
+        <th class="table_head">アイコン画像</th>
+        <td class="table_data">
+          <div class="user_image_container">
+            <% if @user.image.attached? %>
+              <%= image_tag @user.image, class:"user_image" %>
+            <% else %>
+              <%= image_tag 'default-image-user.png', :alt => 'ユーザーのデフォルト画像', class: "user_image" %>
+            <% end %>
+          </div>
+        </td>
+      </tr>
+    
+      <tr class="table_row">
+        <th class="table_head">名前</th>
+        <td class="table_data"><%= @user.name %></td>
+      </tr>
+    
+      <tr class="table_row">
+        <th class="table_head">自己紹介</th>
+        <td class="table_data"><%= @user.introduction %></td>
+      </tr>
+    </table>
+  </div>
+</div>
