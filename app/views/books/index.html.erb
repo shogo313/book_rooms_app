@@ -1,5 +1,6 @@
 <div class="books_index_container">
   <h2 class="heading">予約一覧</h2>
+  <p><%= "#{@books.count}件" %></p>
   <% @books.each do |book| %>
     <div class="book">
       <div class="book_image_container">
