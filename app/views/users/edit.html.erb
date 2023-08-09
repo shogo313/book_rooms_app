@@ -1,6 +1,6 @@
 <div class="users_edit_container">
 	<h3 class="heading">プロフィール編集</h3>
-
+	<%= render "shared/error", obj:@user %>
 	<%= form_with model: @user do |f| %>
 		<div class="form">
 			<table class="form_table">  
