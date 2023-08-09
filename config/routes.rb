@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  
-  get 'homes/top'
+  root 'homes#top'
   get 'searches/index'
   resources :searches, only: [:show]
   devise_for :users

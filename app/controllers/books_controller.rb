@@ -29,7 +29,7 @@ class BooksController < ApplicationController
     @book = Book.new(book_params_create)
     if @book.save
       flash[:notice] = "宿を予約しました"
-      redirect_to homes_top_path
+      redirect_to root_path
     else
       render :new
     end

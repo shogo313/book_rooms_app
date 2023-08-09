@@ -8,7 +8,7 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
-    redirect_to homes_top_path unless @room.user_id == current_user.id
+    redirect_to root_path unless @room.user_id == current_user.id
   end
 
   def new
@@ -19,7 +19,7 @@ class RoomsController < ApplicationController
     @room = Room.new(room_params.merge(user_id: current_user.id))
     if @room.save
       flash[:notice] = "提供する宿を新規登録しました"
-      redirect_to homes_top_path
+      redirect_to root_path
     else
       render :new
     end
