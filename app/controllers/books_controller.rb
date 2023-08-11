@@ -1,7 +1,6 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_room, only: [:new, :confirm, :back]
-  
 
   def index
     @books = current_user.books
@@ -46,5 +45,4 @@ class BooksController < ApplicationController
   def book_params_create
     params.require(:book).permit(:check_in_date, :check_out_date, :number_of_nights, :number_of_people, :payment_amount, :user_id, :room_id)
   end
-  
 end

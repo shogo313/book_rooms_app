@@ -31,6 +31,4 @@ class Book < ApplicationRecord
       room.charge_per_night * number_of_people * number_of_nights
     end
   end
-  
 end
-
