@@ -2,8 +2,7 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @user = current_user
-    @rooms = @user.rooms
+    @rooms = current_user.rooms
   end
 
   def show
