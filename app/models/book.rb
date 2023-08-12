@@ -16,7 +16,7 @@ class Book < ApplicationRecord
 
   def check_out_date_after_check_in_date
     unless check_in_date.nil? || check_out_date.nil?
-      errors.add(:check_out_date, "はチェックインより後の日付を選択してください") if check_in_date > check_out_date
+      errors.add(:check_out_date, "はチェックインより後の日付を選択してください") if check_out_date <= check_in_date
     end
   end
 
