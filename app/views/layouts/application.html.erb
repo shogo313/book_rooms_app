@@ -35,7 +35,7 @@
                 <li class="user_nav_item"><%= link_to 'プロフィール表示', user_path, class: "user_nav_link" %></li>
                 <li class="user_nav_item"><%= link_to 'プロフィール編集', edit_user_path, class: "user_nav_link" %></li>
                 <li class="user_nav_item"><%= link_to '登録宿一覧', user_rooms_path, class: "user_nav_link" %></li>
-                <li class="user_nav_item"><%= link_to '予約宿一覧', user_books_path, class: "user_nav_link" %></li>
+                <li class="user_nav_item"><%= link_to '予約宿一覧', user_reservations_path, class: "user_nav_link" %></li>
                 <li class="user_nav_item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "user_nav_link" %></li>
               </ul>
             </nav>

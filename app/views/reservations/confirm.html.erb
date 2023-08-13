@@ -1,44 +1,44 @@
-<div class="books_confirm_container">
+<div class="reservations_confirm_container">
   <h2 class="heading">入力内容確認</h2>
-  <%= render "shared/error", obj:@book %>
+  <%= render "shared/error", obj:@reservation %>
   <div class="form">
     <h4 class="form_head"><%= @room.name %></h4>
     <table class="form_table">
       <tr class="table_row">
         <th class="table_head">チェックイン</th>
-        <td class="table_data"><%= l @book.check_in_date, format: :date %></td>
+        <td class="table_data"><%= l @reservation.check_in_date, format: :date %></td>
       </tr>
 
       <tr class="table_row">
         <th class="table_head">チェックアウト</th>
-        <td class="table_data"><%= l @book.check_out_date, format: :date %></td>
+        <td class="table_data"><%= l @reservation.check_out_date, format: :date %></td>
       </tr>
 
       <tr class="table_row">
         <th class="table_head">人数</th>
-        <td class="table_data"><%= "#{@book.number_of_people}名" %></td>
+        <td class="table_data"><%= "#{@reservation.number_of_people}名" %></td>
       </tr>
 
       <tr class="table_row">
         <th class="table_head">宿泊日数</th>
-        <td class="table_data"><%= "#{@book.number_of_nights}泊" %></td>
+        <td class="table_data"><%= "#{@reservation.number_of_nights}泊" %></td>
       </tr>
 
       <tr class="table_row">
         <th class="table_head">宿泊料金合計</th>
-        <td class="table_data"><%= "#{@book.payment_amount}円" %></td>
+        <td class="table_data"><%= "#{@reservation.payment_amount}円" %></td>
       </tr>
     </table>
 
     <div class="form_foot">
-      <%= form_with model: @book, url: {action: :back} do |f| %>
+      <%= form_with model: @reservation, url: {action: :back} do |f| %>
         <%= f.hidden_field :check_in_date %>
         <%= f.hidden_field :check_out_date %>
         <%= f.hidden_field :number_of_people %>
         <%= f.submit "予約内容入力へ戻る", class: "button" %>
       <% end %>
       
-      <%= form_with model: [@room, @book] do |f| %>
+      <%= form_with model: [@room, @reservation] do |f| %>
         <%= f.hidden_field :check_in_date %>
         <%= f.hidden_field :check_out_date %>
         <%= f.hidden_field :number_of_nights %>

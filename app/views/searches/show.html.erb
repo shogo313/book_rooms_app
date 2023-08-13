@@ -20,7 +20,7 @@
 
     <div class="room_foot">
      <p class="room_chargePerNight"><%= "#{@room.charge_per_night}円(/一泊)" %></p>
-      <%= link_to "予約する", new_room_book_path(@room), class: "button" %>
+      <%= link_to "予約する", new_room_reservation_path(@room), class: "button" %>
    </div>
   </div>
 </div>

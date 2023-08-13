@@ -18,13 +18,13 @@ Rails.application.routes.draw do
   resource :user,only: [:show, :edit, :update] do
     get :account, on: :collection
     resources :rooms, only: [:index, :show]
-    resources :books, only: [:index]
+    resources :reservations, only: [:index]
   end
 
   resources :rooms, only: [:new, :create] do
-    resources :books, only: [:new, :create]
-    get 'books/confirm', to: 'books#confirm'
-    post 'books/new' , to: 'books#back'
+    resources :reservations, only: [:new, :create]
+    get 'reservations/confirm', to: 'reservations#confirm'
+    post 'reservations/new' , to: 'reservations#back'
   end
 
   resources :searches, only: [:index, :show]

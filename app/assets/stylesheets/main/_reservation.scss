@@ -1,10 +1,10 @@
-// Place all the styles related to the books controller here.
+// Place all the styles related to the reservations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 //index.html.erb
-.books_index_container {
-  .book {
+.reservations_index_container {
+  .reservation {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,14 +14,14 @@
     border-radius: 10px;
     background-color: $main-color;
   }
-  .book_image_container {
+  .reservation_image_container {
     width: 48%;
   }
-  .book_image {
+  .reservation_image {
     display: block;
     width: 100%;
   }
-  .book_text {
+  .reservation_text {
     width: 48%;
     border-collapse: collapse;
     th {
@@ -36,13 +36,13 @@
     }
   }
   @media screen and (max-width:800px) {
-    .book {
+    .reservation {
       flex-direction: column;
     }
-    .book_image_container {
+    .reservation_image_container {
       width: 100%;
     }
-    .book_text {
+    .reservation_text {
       width: 100%;
     }
   }
