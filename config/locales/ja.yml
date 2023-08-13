@@ -2,7 +2,7 @@ ja:
   activerecord:
     models:
       room: 宿
-      book: 予約
+      reservation: 予約
       user: ユーザー
     attributes:
       room:
@@ -11,7 +11,7 @@ ja:
         charge_per_night: 宿泊料金
         detail: 詳細
         introduction: 紹介文
-      book:
+      reservation:
         check_in_date: チェックイン
         check_out_date: チェックアウト
         number_of_people: 人数
