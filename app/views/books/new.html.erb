@@ -3,7 +3,7 @@
   <%= render "shared/error", obj:@book %>
   <div class="form">
     <h4 class="form_head"><%= @room.name %></h4>
-    <%= form_with model: [@room, @book], url: {action: :confirm} do |f| %>
+    <%= form_with model: @book, url: {action: :confirm}, method: :get do |f| %>
       <table class="form_table">
         <tr class="table_row">
           <th class="table_head"><%= f.label :check_in_date ,"チェックイン" %></th>

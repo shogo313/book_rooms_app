@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   resources :rooms, only: [:new, :create] do
     resources :books, only: [:new, :create]
-    post 'books/confirm', to: 'books#confirm'
+    get 'books/confirm', to: 'books#confirm'
     post 'books/new' , to: 'books#back'
   end
 

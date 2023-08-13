@@ -31,7 +31,7 @@
     </table>
 
     <div class="form_foot">
-      <%= form_with model: [@room, @book], url: {action: :back} do |f| %>
+      <%= form_with model: @book, url: {action: :back} do |f| %>
         <%= f.hidden_field :check_in_date %>
         <%= f.hidden_field :check_out_date %>
         <%= f.hidden_field :number_of_people %>
