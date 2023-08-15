@@ -12,11 +12,11 @@ class Room < ApplicationRecord
 
   def self.search(word_name_detail, word_area)
     if word_area.present? || word_name_detail.present?
-      @rooms = Room.where('concat(name, detail) like ? and address like ?', "%#{word_name_detail}%", "%#{word_area}%")
+      where('concat(name, detail) like ? and address like ?', "%#{word_name_detail}%", "%#{word_area}%")
     elsif word_name_detail.present? || word_area.empty?
-      @rooms = Room.where('concat(name, detail) like ?',"%#{word_name_detail}%")
+      where('concat(name, detail) like ?',"%#{word_name_detail}%")
     elsif word_area.present? || word_name_detail.empty?
-      @rooms = Room.where('address like ?',"%#{word_area}%")
+      where('address like ?',"%#{word_area}%")
     end
   end
 end
