@@ -15,7 +15,9 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
+    binding.pry
     if @user.update(profile_params)
+      @user.image.purge if params[:delete_image].present?
       flash[:notice] = "プロフィールを更新しました"
       redirect_to root_path
     else

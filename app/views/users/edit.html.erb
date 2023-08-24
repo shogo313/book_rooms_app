@@ -14,7 +14,12 @@
 				</tr> 
 				<tr class="table_row">
 					<th class="table_head"><%= f.label :image ,"アイコン画像" %></th>
-					<td class="table_data"><%= f.file_field :image %></td>
+					<td class="table_data">
+						<p>現在のアイコン画像を変更する</p>
+						<%= f.file_field :image %><br>
+						<%= check_box_tag :delete_image %>
+						<%= label_tag :delete_image, "デフォルト画像を使用する" %>
+					</td>
 				</tr> 
 			</table>
 		
