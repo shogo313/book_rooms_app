@@ -12,5 +12,5 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-import "./script"
+import "../src/script"
 import "jquery"
