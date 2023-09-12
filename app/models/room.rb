@@ -6,7 +6,7 @@ class Room < ApplicationRecord
 
   validates :name, presence: true
   validates :introduction, length:{maximum: 50}
-  validates :charge_per_night, presence: true, numericality: true
+  validates :charge_per_night, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 1 }
   validates :detail, presence: true, length:{maximum: 1000}
   validates :address, presence: true, length:{maximum: 60}
 
