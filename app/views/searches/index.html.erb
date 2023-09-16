@@ -20,7 +20,7 @@
           <p class="room_address"><%= room.address %></p>
           <p class="room_detail"><%= truncate(room.detail, length: 80) %></p>
           <p class="room_chargePerNight"><%= "#{room.charge_per_night}円(/一泊)" %></p>
-          <%= link_to "詳細", search_path(room.id), class: "button" %>
+          <%= link_to "詳細", room_path(room.id), class: "button" %>
         </div>
       </div>
     <% end %>

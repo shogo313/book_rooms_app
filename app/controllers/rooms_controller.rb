@@ -7,7 +7,6 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
-    redirect_to root_path unless @room.user_id == current_user.id
   end
 
   def new
