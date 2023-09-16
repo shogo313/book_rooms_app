@@ -1,0 +1,28 @@
+<%= render "shared/search" %>
+
+<div class="searches_index_container">
+  <div class="search_head">
+    <h2 class="heading">検索結果</h2>
+    <p class="search_count"><%= "#{@rooms.count}件" %></p>
+  </div>
+  <div class="search_body">
+    <% @rooms.each do |room| %>
+      <div class="room">
+        <div class="room_image_container">
+          <% if room.image.attached? %>
+            <%= image_tag room.image, class:"room_image" %>
+          <% else %>
+            <%= image_tag 'default-image-room.png', :alt => '宿のデフォルト画像', class:"room_image" %>
+          <% end %>
+        </div>
+        <div class="room_text_container">
+          <h4 class="room_name"><%= truncate(room.name, length: 20) %></h4>
+          <p class="room_address"><%= room.address %></p>
+          <p class="room_detail"><%= truncate(room.detail, length: 80) %></p>
+          <p class="room_chargePerNight"><%= "#{room.charge_per_night}円(/一泊)" %></p>
+          <%= link_to "詳細", room_path(room.id), class: "button" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

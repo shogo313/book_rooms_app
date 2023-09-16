@@ -1,0 +1,29 @@
+<div class="reservations_new_container">
+  <h2 class="heading">予約内容入力</h2>
+  <%= render "shared/error", obj:@reservation %>
+  <div class="form">
+    <h4 class="form_head"><%= @room.name %></h4>
+    <%= form_with model: @reservation, url: {action: :confirm}, method: :get do |f| %>
+      <table class="form_table">
+        <tr class="table_row">
+          <th class="table_head"><%= f.label :check_in_date ,"チェックイン" %></th>
+          <td class="table_data"><%= f.date_field :check_in_date, class:"input" %></td>
+        </tr>
+      
+        <tr class="table_row">
+          <th class="table_head"><%= f.label :check_out_date ,"チェックアウト" %></th>
+          <td class="table_data"><%= f.date_field :check_out_date, class:"input" %></td>
+        </tr>
+      
+        <tr class="table_row">
+          <th class="table_head"><%= f.label :number_of_people ,"人数" %></th>
+          <td class="table_data"><%= f.number_field :number_of_people, class:"input" %></td>
+        </tr>
+      </table>
+
+      <div class="form_foot">
+        <%= f.submit "入力内容確認画面へ", class:"button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

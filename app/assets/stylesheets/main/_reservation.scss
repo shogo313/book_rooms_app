@@ -1,0 +1,49 @@
+// Place all the styles related to the reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+//index.html.erb
+.reservations_index_container {
+  .reservation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid $border-color;
+    border-radius: 10px;
+    background-color: $main-color;
+  }
+  .reservation_image_container {
+    width: 48%;
+  }
+  .reservation_image {
+    display: block;
+    width: 100%;
+  }
+  .reservation_text {
+    width: 48%;
+    border-collapse: collapse;
+    th {
+      padding: 10px;
+      border: 1px solid $border-color;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    td {
+      padding: 10px;
+      border: 1px solid $border-color;
+    }
+  }
+  @media screen and (max-width:800px) {
+    .reservation {
+      flex-direction: column;
+    }
+    .reservation_image_container {
+      width: 100%;
+    }
+    .reservation_text {
+      width: 100%;
+    }
+  }
+}

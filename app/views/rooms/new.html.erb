@@ -1,0 +1,45 @@
+<div class="rooms_new_container">
+  <h2 class="heading">宿の新規登録</h2>
+  
+  <%= render "shared/error", obj:@room %>
+  
+  <%= form_with model: @room do |f| %>
+<div class="form">
+  <table class="form_table">
+    <tr class="table_row">
+      <th class="table_head"><%= f.label :name ,"宿名" %></th>
+      <td class="table_data"><%= f.text_field :name %></td>
+    </tr>
+  
+    <tr class="table_row">
+      <th class="table_head"><%= f.label :address ,"住所" %></th>
+      <td class="table_data"><%= f.text_field :address %></td>
+    </tr>
+  
+    <tr class="table_row">
+      <th class="table_head"><%= f.label :charge_per_night ,"宿泊料金(円/一泊)" %></th>
+      <td class="table_data"><%= f.text_field :charge_per_night %></td>
+    </tr>
+    
+    <tr class="table_row">
+      <th class="table_head"><%= f.label :detail ,"詳細" %></th>
+      <td class="table_data"><%= f.text_area :detail %></td>
+    </tr>
+    
+    <tr class="table_row">
+      <th class="table_head"><%= f.label :introduction ,"紹介文" %></th>
+      <td class="table_data"><%= f.text_area :introduction %></td>
+    </tr>
+    <tr class="table_row">
+      <th class="table_head"><%= f.label :image ,"画像" %></th>
+      <td class="table_data"><%= f.file_field :image %></td>
+    </tr>
+  </table>
+
+  <div class="form_foot">
+    <%= f.submit "登録", class:"button" %>
+  </div>
+</div>
+  
+  <% end %>
+</div>

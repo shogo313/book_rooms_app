@@ -1,0 +1,21 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+//top.html.erb
+.homes_top_container {
+  text-align: center;
+  .home_head {
+    margin: 20px 0;
+    h1 {
+      font-size: $h1Heading-size;
+    }
+  }
+  .home_body {
+    margin-bottom: 20px;
+    h2 {
+      padding: 10px 0;
+      font-size: $h2Heading-size;
+    }
+  }
+}

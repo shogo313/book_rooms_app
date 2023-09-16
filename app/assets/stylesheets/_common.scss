@@ -1,0 +1,155 @@
+//aplication.html.erb
+body {
+  background-color: $base-color;
+  color: $letter-color;
+}
+.container {
+  padding: 10px;
+  margin: 0 auto;
+  max-width: $container-width;
+}
+.header {
+  background-color: $main-color;
+  width: 100%;
+  .header_inner {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: $container-width;
+    .header_logo {
+      align-self: flex-start;
+      padding: 10px 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: inherit;
+      text-decoration: none;
+    }
+    .header_notice {
+      align-self: center;
+      font-size: 14px;
+    }
+    .user_menu {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 10px;
+      width: 50%;
+    }
+    .user_image_container {
+      width: 40px;
+      height: 40px;
+    }
+    .user_image {
+      object-fit: cover;
+      border: 2px solid $border-color;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+    .user_nav {
+      margin-left: 20px;
+    }
+    .dropDawnMenu-default {
+      display: none;
+    }
+    .dropDawnMenu-open {
+      display: block;
+    }
+    .user_name {
+      padding: 10px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .user_name:hover {
+      opacity: .6;
+    }
+    .user_nav_list {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: translateY(100%);
+      box-sizing: border-box;
+      width: 100%;
+      padding-left: 0;
+      border: 4px solid $border-color;
+      margin-top: 0;
+      margin-bottom: 0;
+      list-style: none;
+    }
+    .user_nav_item {
+      text-align: center;
+      border-bottom: 2px solid $border-color;
+      background-color: rgba(0,0,0,.6);
+      line-height: 2;
+    }
+    .user_nav_item:last-child {
+      border-bottom: none;
+    }
+    .user_nav_link {
+      display: block;
+      color: $letter-color;
+      text-decoration: none;
+    }
+    .user_nav_link:hover {
+      opacity: .2;
+    }
+  }
+}
+
+//各ページの見出し
+.heading {
+  margin: 20px auto;
+  font-size: $h2Heading-size;
+ }
+
+//入力フォーム
+.form {
+  display: inline-flex;
+  flex-direction: column;
+  .form_head {
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: center;
+  }
+  .form_table {
+    .table_head, .table_data {
+      border: 1px solid $border-color;
+      padding: 6px;
+      vertical-align: middle;
+    }
+  }
+  .form_foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+//ボタン
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid $border-color;
+  margin: 10px;
+  border-radius: 10px;
+  color: $letter-color;
+  text-decoration: none;
+  background-color: $accent-color;
+}
+.button:hover {
+  opacity: .6;
+}
+
+//リンク
+.link {
+  padding: 10px;
+}
+.link:hover {
+  opacity: .6;
+}
+.link-back {
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+}

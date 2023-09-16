@@ -1,0 +1,25 @@
+<div class="users_edit_container">
+	<h3 class="heading">プロフィール編集</h3>
+	<%= render "shared/error", obj:@user %>
+	<%= form_with model: @user do |f| %>
+		<div class="form">
+			<table class="form_table">  
+				<tr class="table_row">
+					<th class="table_head"><%= f.label :name ,"名前" %></th>
+					<td class="table_data"><%= f.text_field :name %></td>
+				</tr>
+		    <tr class="table_row">
+					<th class="table_head"><%= f.label :introduction ,"自己紹介" %></th>
+					<td class="table_data"><%= f.text_area :introduction %></td>
+				</tr> 
+				<tr class="table_row">
+					<th class="table_head"><%= f.label :image ,"アイコン画像" %></th>
+					<td class="table_data"><%= f.file_field :image %></td>
+				</tr> 
+			</table>
+		
+			<div class="form_foot">
+				<%= f.submit "確定", class:"button" %>
+			</div>
+		<% end %>
+</div>
